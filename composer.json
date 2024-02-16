@@ -1,0 +1,12 @@
+{
+    "name": "prabin/esewa",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Prabin\\Esewa\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
