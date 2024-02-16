@@ -3,12 +3,12 @@ namespace Prabin\Esewa;
 class EsewaPayment{
     public function paymentVerify($oid,$amt,$refId,$actualAmount)
     {
-        $url = "https://uat.esewa.com.np/epay/transrec";
+        $url = config('esewa.PAYMENT_VERIFICATION');
         $data =[
         'amt'=> $actualAmount,
         'rid'=> $refId,
-        'pid'=>'1234s',
-        'scd'=> 'EPAYTEST'
+        'pid'=>$oid,
+        'scd'=> config('esewa.ESEWA_DEV_MERCHANT')
         ];
      $curl = curl_init($url);
      curl_setopt($curl, CURLOPT_POST, true);
