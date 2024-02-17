@@ -4,13 +4,27 @@
 
 This repository contains the source code and resources for integrating the eSewa payment gateway into a Laravel application.
 
+#Lets start from form
+  <form action="https://uat.esewa.com.np/epay/main" method="POST">
+            <input value="100" name="tAmt" type="hidden">
+            <input value="90" name="amt" type="hidden">
+            <input value="5" name="txAmt" type="hidden">
+            <input value="2" name="psc" type="hidden">
+            <input value="3" name="pdc" type="hidden">
+            <input value="EPAYTEST" name="scd" type="hidden">
+            <input value="prabin123" name="pid" type="hidden">
+            <input value="{{route('payment.success')}}" type="hidden" name="su">
+            <input value="{{route('payment.failure')}}" type="hidden" name="fu">
+            <input value="Submit" type="submit">
+        </form>
+
 ## Environment Variables
 
-- `ESEWA_DEV`: The URL for eSewa's development environment.
-- `ESEWA_LIVE`: The URL for eSewa's live (production) environment.
-- `ESEWA_DEV_MERCHANT`: Your eSewa merchant ID for the development environment.
-- `ESEWA_LIVE_MERCHANT`: Your eSewa merchant ID for the live environment.
-- `PAYMENT_VERIFICATION`: The URL for eSewa's payment verification endpoint.
+ESEWA_DEV="https://uat.esewa.com.np"
+ESEWA_LIVE="https://esewa.com.np"
+ESEWA_DEV_MERCHANT="EPAYTEST"
+ESEWA_LIVE_MERCHANT=""
+PAYMENT_VERIFICATION="https://uat.esewa.com.np/epay/transrec"
 
 ## Installation and Setup
 
