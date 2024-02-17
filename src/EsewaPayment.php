@@ -1,5 +1,5 @@
 <?php
-namespace Prabin\Esewa;
+namespace Prabin\Laravel\Esewa;
 class EsewaPayment{
     public function paymentVerify($oid,$amt,$refId,$actualAmount)
     {

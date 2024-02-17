@@ -4,7 +4,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Prabin\\Esewa\\": "src/"
+            "Prabin\\Laravel\\Esewa\\": "src/"
         }
     },
     "minimum-stability": "dev",

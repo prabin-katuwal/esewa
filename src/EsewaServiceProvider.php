@@ -1,5 +1,5 @@
 <?php
-namespace Prabin\Esewa;
+namespace Prabin\Laravel\Esewa;
 use Illuminate\Support\ServiceProvider;
 
 class EsewaServiceProvider extends ServiceProvider{

@@ -47,7 +47,7 @@ PAYMENT_VERIFICATION="https://uat.esewa.com.np/epay/transrec"
 3. Add the following code to your `config/app.php` file in the providers section:
 
     ```php
-    Prabin\Esewa\EsewaServiceProvider::class,
+    Prabin\Laravel\Esewa\EsewaServiceProvider::class,
     ```
 
 ## Usage
@@ -64,7 +64,7 @@ PAYMENT_VERIFICATION="https://uat.esewa.com.np/epay/transrec"
     ```php
     namespace App\Http\Controllers;
 
-    use Prabin\Esewa\EsewaPayment;
+    use Prabin\Laravel\Esewa\EsewaPayment;
     use Illuminate\Http\Request;
 
     class EsewaController extends Controller
