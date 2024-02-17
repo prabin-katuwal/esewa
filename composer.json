@@ -1,18 +1,10 @@
 {
-<<<<<<< HEAD
     "name": "prabin/esewa",
-=======
-    "name": "prabin/laravelesewa",
->>>>>>> b087501 (changed)
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-<<<<<<< HEAD
-            "Prabin\\Laravel\\Esewa\\": "src/"
-=======
             "Prabin\\Esewa\\": "src/"
->>>>>>> b087501 (changed)
         }
     },
     "minimum-stability": "dev",
