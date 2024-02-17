@@ -1,8 +1,9 @@
 <?php
 return [
-    "ENV_DEV"=>"https://uat.esewa.com.np",
-    "ENV_LIVE"=>"https://esewa.com.np",
-    "ESEWA_MERCHANT"=>"EPAYTEST",
-    "PAYMENT_VERIFICATION"=>"https://uat.esewa.com.np/epay/transrec"
+    "ENV_DEV"=>env('ENV_DEV'),
+    "ENV_LIVE"=>env('ENV_LIVE'),
+    "ESEWA_DEV_MERCHANT"=>env('ESEWA_DEV_MERCHANT'),
+    "ESEWA_LIVE_MERCHANT"=>env('ESEWA_LIVE_MERCHANT'),
+    "PAYMENT_VERIFICATION"=>env('PAYMENT_VERIFICATION')
 
 ];
