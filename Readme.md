@@ -5,6 +5,8 @@
 This repository contains the source code and resources for integrating the eSewa payment gateway into a Laravel application.
 
 #Lets start from form
+When you copy form from esewa please make sure to include
+```html
   <form action="https://uat.esewa.com.np/epay/main" method="POST">
             <input value="100" name="tAmt" type="hidden">
             <input value="90" name="amt" type="hidden">
@@ -12,11 +14,13 @@ This repository contains the source code and resources for integrating the eSewa
             <input value="2" name="psc" type="hidden">
             <input value="3" name="pdc" type="hidden">
             <input value="EPAYTEST" name="scd" type="hidden">
-            <input value="prabin123" name="pid" type="hidden">
+            <input value="1234strsst" name="pid" type="hidden">
             <input value="{{route('payment.success')}}" type="hidden" name="su">
             <input value="{{route('payment.failure')}}" type="hidden" name="fu">
             <input value="Submit" type="submit">
-        </form>
+            </form>
+```
+
 
 ## Environment Variables
 
