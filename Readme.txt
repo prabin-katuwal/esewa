@@ -1,35 +1,57 @@
-Laravel eSewa Integration - README
+# Laravel eSewa Integration
 
-This repository contains the source code and resources for integrating eSewa payment gateway into a Laravel application.
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Environment Variables:
-- ESEWA_DEV: The URL for eSewa's development environment.
-- ESEWA_LIVE: The URL for eSewa's live (production) environment.
-- ESEWA_DEV_MERCHANT: Your eSewa merchant ID for the development environment.
-- ESEWA_LIVE_MERCHANT: Your eSewa merchant ID for the live environment.
-- PAYMENT_VERIFICATION: The URL for eSewa's payment verification endpoint.
+This repository contains the source code and resources for integrating the eSewa payment gateway into a Laravel application.
 
-Installation and Setup:
-1.composer require prabin/esewa;
-2.php artisan vendor:publish
-3.Copy this code and place in you config/app.php file in providers section
-Prabin\Esewa\EsewaServiceProvider::class,
+## Environment Variables
 
+- `ESEWA_DEV`: The URL for eSewa's development environment.
+- `ESEWA_LIVE`: The URL for eSewa's live (production) environment.
+- `ESEWA_DEV_MERCHANT`: Your eSewa merchant ID for the development environment.
+- `ESEWA_LIVE_MERCHANT`: Your eSewa merchant ID for the live environment.
+- `PAYMENT_VERIFICATION`: The URL for eSewa's payment verification endpoint.
 
-Usage:
-1. Define Routes:
-   - `Route::get('/payment-success', [EsewaController::class, 'success'])->name('payment.success');`
-   - `Route::get('/payment-failure', [EsewaController::class, 'failure'])->name('payment.failure');`
+## Installation and Setup
 
-2. Create Controller Methods:
+1. Install the eSewa package via Composer:
 
-   namespace App\Http\Controllers;
+    ```bash
+    composer require prabin/esewa
+    ```
 
-   use Illuminate\Http\Request;
+2. Publish the vendor files:
 
-   class EsewaController extends Controller
-   {
-       public function success(Request $request)
+    ```bash
+    php artisan vendor:publish
+    ```
+
+3. Add the following code to your `config/app.php` file in the providers section:
+
+    ```php
+    Prabin\Esewa\EsewaServiceProvider::class,
+    ```
+
+## Usage
+
+1. **Define Routes**:
+
+    ```php
+    Route::get('/payment-success', [EsewaController::class, 'success'])->name('payment.success');
+    Route::get('/payment-failure', [EsewaController::class, 'failure'])->name('payment.failure');
+    ```
+
+2. **Create Controller Methods**:
+
+    ```php
+    namespace App\Http\Controllers;
+
+    use Prabin\Esewa\EsewaPayment;
+    use Illuminate\Http\Request;
+
+    class EsewaController extends Controller
+    {
+         public function success(Request $request)
     {
      $payment=new EsewaPayment();
      // please make sure this totalAmount is come through your database
@@ -52,4 +74,9 @@ Usage:
     {
         // Add logic to handle failed payments here
     }
-   }
+    }
+    ```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
