@@ -10,7 +10,7 @@ class EsewaPayment{
             'amt'=> $actualAmount,
             'rid'=> $refId,
             'pid'=>$oid,
-            'scd'=> config('esewa.ESEWA_DEV_MERCHANT')
+            'scd'=> config('esewa.ESEWA_MERCHANT')
             ];
          $curl = curl_init($url);
          curl_setopt($curl, CURLOPT_POST, true);

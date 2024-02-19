@@ -6,6 +6,7 @@ This repository contains the source code and resources for integrating the eSewa
 
 #Lets start from form
 When you copy form from esewa please make sure to include
+please make sure this action fild should be live url in case of production site
 ```html
   <form action="https://uat.esewa.com.np/epay/main" method="POST">
             <input value="100" name="tAmt" type="hidden">
@@ -23,11 +24,10 @@ When you copy form from esewa please make sure to include
 
 
 ## Environment Variables
+I am using test merchant id in case of live use valid merchant id
 
-ESEWA_DEV="https://uat.esewa.com.np"
-ESEWA_LIVE="https://esewa.com.np"
-ESEWA_DEV_MERCHANT="EPAYTEST"
-ESEWA_LIVE_MERCHANT=""
+ESEWA_URL="https://uat.esewa.com.np"
+ESEWA_MERCHANT="EPAYTEST"
 PAYMENT_VERIFICATION="https://uat.esewa.com.np/epay/transrec"
 
 ## Installation and Setup
